@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import myInterfaces.IntQuestion;
 import myUtils.AdditionQuestion;
+import tester.ITesterReponse;
+import tester.TesterReponseInteger;
 
 public class EE57 {
 
@@ -19,13 +21,10 @@ public class EE57 {
 			answers[i] = sc.nextInt();
 		}
 		sc.close();
+		ITesterReponse tester;
 		for (int i=0; i<10;i++){
-			if (questions[i].getCorrectAnswer() == answers[i]){
-				System.out.println("You wrote "+answers[i]+" to the question "+questions[i].getQuestion()+" and you where right !");
-			}
-			else {
-				System.out.println("You wrote "+answers[i]+" to the question "+questions[i].getQuestion()+" but you where wrong :( The answer was "+questions[i].getCorrectAnswer());
-			}
+			tester = new TesterReponseInteger(questions[i].getQuestion(), answers[i], questions[i].getCorrectAnswer());
+			tester.printResultat();
 		}
 
 	}
