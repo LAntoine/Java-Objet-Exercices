@@ -8,7 +8,7 @@ import myUtils.AdditionQuestion;
 public class EE57 {
 
 	public static void main(String[] args) {
-		IntQuestion[] questions = new AdditionQuestion[10];
+		IntQuestion[] questions = new IntQuestion[10];
 		for (int i=0; i<10;i++){
 			questions[i] = new AdditionQuestion();
 		}
@@ -21,10 +21,10 @@ public class EE57 {
 		sc.close();
 		for (int i=0; i<10;i++){
 			if (questions[i].getCorrectAnswer() == answers[i]){
-				System.out.println("You wrote "+answers[i]+" to the question "+questions[i].getCorrectAnswer()+"and you where right !");
+				System.out.println("You wrote "+answers[i]+" to the question "+questions[i].getQuestion()+" and you where right !");
 			}
 			else {
-				System.out.println("You wrote "+answers[i]+" to the question "+questions[i].getCorrectAnswer()+"but you where wrong :( The answer was "+questions[i].getCorrectAnswer());
+				System.out.println("You wrote "+answers[i]+" to the question "+questions[i].getQuestion()+" but you where wrong :( The answer was "+questions[i].getCorrectAnswer());
 			}
 		}
 
